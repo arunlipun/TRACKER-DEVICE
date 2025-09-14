@@ -36,9 +36,12 @@ io.on("connection", (socket) => {
     });
 });
 
-// server.listen(3220, () => {
-//     console.log("Server running at http://localhost:3220");
+
+// server.listen(3220, "0.0.0.0", () => {
+//   console.log("Server running at http://localhost:3220");
 // });
-server.listen(3220, "0.0.0.0", () => {
-  console.log("Server running at http://localhost:3220");
+
+const PORT = process.env.PORT || 3220; // Render ke liye dynamic, local ke liye 3220
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
